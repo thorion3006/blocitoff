@@ -3,12 +3,34 @@
   <head>
     <title>Blocitoff</title>
     <%= csrf_meta_tags %>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container-fluid">
+
+    <div class="inner">
+      <%= link_to "#{image_tag("logo.png", size: "250x100", alt: "Logo", class: "masthead-brand")}".html_safe, root_path %>
+      <nav class="nav nav-masthead">
+        <a class="nav-link active" href="#">Lists</a>
+        <a class="nav-link" href="#">Sign up / Sign in</a>
+      </nav>
+    </div>
+
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= flash[:notice] %>
+      </div>
+    <% elsif flash[:alert].present? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

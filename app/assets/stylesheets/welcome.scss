@@ -1,0 +1,22 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.center {
+  height: 50vh;
+}
+
+.cover {
+  padding: 0 1.5rem;
+  margin-top: 25%;
+}
+
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.cover-heading {
+  text-align: center;
+}
