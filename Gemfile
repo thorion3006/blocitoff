@@ -41,6 +41,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'faker'
   gem 'factory_girl_rails'
+  gem 'letter_opener_web'
 end
 
 group :development do
