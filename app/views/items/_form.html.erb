@@ -1,0 +1,3 @@
+<%= form_for [user, item], remote: true, id: "item-form" do |f| %>
+  <%= f.text_field :name, class: 'form-control', placeholder: "New entry...", autofocus: true, id: "item" %>
+<% end %>
