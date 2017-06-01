@@ -38,12 +38,16 @@
 <br>
 <div>
   <h2>My lists:</h2>
-  <ul>
-    <% @user.items.each do |item| %>
-      <%= render partial: 'items/item', locals: { list: item } %>
-    <% end %>
-    <div id="new-item">
-      <%= link_to 'click to add new item to the list!', user_path(@user), remote: true %>
+  <ul class="list">
+    <div id="my-list">
+      <% @user.items.each do |item| %>
+        <%= render partial: 'items/item', locals: { list: item } %>
+      <% end %>
     </div>
+    <li>
+      <div id="new-item">
+        <%= link_to 'click to add new item to the list!', user_path(@user), remote: true %>
+      </div>
+    </li>
   </ul>
 </div>

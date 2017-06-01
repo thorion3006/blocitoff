@@ -5,11 +5,15 @@ class ItemsController < ApplicationController
     @user = current_user
     @item = @user.items.build(item_params)
     if @item.save
-      flash[:notice] = 'Item saved successfully.'
     else
-      flash.now[:alert] = 'There was an error saving your item. Please try again.'
+      flash[:alert] = 'There was an error saving your item. Please try again.'
+      redirect_to user_path(current_user)
     end
-    redirect_to user_path(current_user)
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 
   private

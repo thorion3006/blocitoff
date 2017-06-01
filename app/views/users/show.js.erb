@@ -1,7 +1,9 @@
+// Adding new items to the list
 $('#new-item').html("<%= escape_javascript(render(partial: 'items/form', locals: { user: @user, item: @item })) %>");
 
 $('#item').keypress(function (e) {
   if (e.which == 13) {
     $('#item-form').submit();
+    $('#my-list').append("<%= escape_javascript(render(partial: 'items/item', locals: { list: current_user.items.last })) %>");
   }
 });

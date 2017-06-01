@@ -1,1 +1,3 @@
-<li><%= list.name %></li>
+<%= content_tag :li, class: 'glyphicon glyphicon-ok', data: { id: list.id, user: current_user.id } do %>
+  <%= list.name %>
+<% end %>
