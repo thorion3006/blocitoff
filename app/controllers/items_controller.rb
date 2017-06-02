@@ -4,8 +4,8 @@ class ItemsController < ApplicationController
   def create
     @user = current_user
     @item = @user.items.build(item_params)
-    if @item.save
-    else
+    unless @item.save
+      Rails.logger.info "did not save the item."
       flash[:alert] = 'There was an error saving your item. Please try again.'
       redirect_to user_path(current_user)
     end

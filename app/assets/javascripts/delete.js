@@ -8,10 +8,9 @@ $(document).ready(function() {
     var id = $(this).data('id');
     var $item = $(this);
     $.ajax({
-      type: "POST",
+      type: "DELETE",
       url: '/users/' + user + '/items/' + id,
       dataType: 'json',
-      data: {'_method' : 'delete'},
       success: function(data) {
         $item.fadeOut();
       }

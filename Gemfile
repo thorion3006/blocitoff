@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'autoprefixer-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'whenever', :require => false
 
 # Tooltips and popovers depend on tether for positioning.
 source 'https://rails-assets.org' do

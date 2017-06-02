@@ -15,7 +15,7 @@
       <%= link_to "#{image_tag("logo.png", size: "250x100", alt: "Logo", class: "masthead-brand")}".html_safe, root_path %>
       <nav class="nav nav-masthead">
         <% if user_signed_in? %>
-          <%= link_to current_user.uname, user_path(current_user), class: active_class(user_path) %>
+          <%= link_to current_user.uname, user_path(current_user), class: active_class(user_path(current_user)) %>
           <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: active_class(destroy_user_session_path) %>
         <% else %>
           <%= link_to 'Sign Up', new_user_registration_path, class: active_class(new_user_registration_path) %>

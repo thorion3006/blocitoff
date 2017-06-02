@@ -4,6 +4,5 @@ $('#new-item').html("<%= escape_javascript(render(partial: 'items/form', locals:
 $('#item').keypress(function (e) {
   if (e.which == 13) {
     $('#item-form').submit();
-    $('#my-list').append("<%= escape_javascript(render(partial: 'items/item', locals: { list: current_user.items.last })) %>");
   }
 });
